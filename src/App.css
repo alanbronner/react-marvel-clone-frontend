@@ -1,38 +1,520 @@
-.App {
+body {
+  margin: 0;
+  min-width: 1200px;
+  height: 100vh;
+  background-color: black;
+}
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+*:hover {
+  text-decoration: none;
+}
+*:focus {
+  outline: none;
+}
+a,
+Link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+img {
+  object-fit: cover;
+  object-position: center;
+}
+/* MODAL */
+/*background*/
+.modal_container {
+  animation: myFade 0.5s linear 2s;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+/*content */
+.modal_body {
+  background-color: white;
+  margin: auto;
+  padding: 5px;
+  width: 30%;
+}
+/*close button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover {
+  color: #ed171e;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* BUTTONS */
+.btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 24px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn:hover {
+  background-color: #ed171e;
+  color: white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* HEADER */
+.header_container {
+  height: 80px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  z-index: 1; /* Sit on top */
+  background-color: black;
+  border-bottom: solid 2px #ed171e;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header_container img {
+  height: 50px;
+}
+.header_nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.header_link {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-right: 2rem;
+  font-size: 20px;
+  font-family: "Chewy", cursive;
+}
+.header_link:hover {
+  color: #ed171e;
+}
+/* LOADER */
+.loader_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loader_container h1 {
+  font-size: 28px;
+  font-family: "Chewy", cursive;
+}
+.loader_container img {
+  padding: 20px;
+  height: 400px;
+}
+/* LIST */
+.characters_wrapper,
+.comics_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 40px 20px 40px;
+}
+.list_item {
+  background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 260px;
+  height: 300px;
+  margin: 10px 15px 30px 15px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: translate(0, 0);
+  transition: 0.3s;
+}
+.list_item:hover {
+  transform: translate(0, -9px);
+}
+.list_item:hover .list_body {
+  transform: translate(0, 0);
+}
+.list_body {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 10px 5px 10px;
+  width: 100%;
+  transform: translate(0, 110px);
+  line-height: 24px;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list_body h2 {
+  line-height: 16px;
+  padding: 4px;
+  margin: 16px 0;
+  color: white;
+  font-family: "Chewy", cursive;
+}
+.list_body button {
+  background-color: #ed171e;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.list_body button:hover {
+  background-color: black;
+}
+/* SEARCH */
+.searchbar_wrapper {
+  border-bottom: 2px solid #ed171e;
+}
+.input_icon_wrap_search {
+  display: flex;
+  padding: 4px;
+  background-color: white;
+}
+.searchbar_with_icon {
+  height: 40px;
+  width: 600px;
+  padding-top: 6px;
+  border: none;
+}
+.input_icon_search {
+  background-image: url(./SearchIcon.png);
+  background-color: white;
+  background-size: cover;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.searchbar_with_icon {
+  border: none;
+  font-size: 26px;
+  font-family: "Chewy", cursive;
+}
+
+/* PAGINATION */
+.pagination_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* FORMS */
+/* signup */
+.form_signup_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_signup_wrapper {
+  width: 60vw;
+  padding: 10px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_signup_img img {
+  height: 400px;
+  width: 560px;
+}
+.form_signup_img {
+  flex: 0 0 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_signup_body {
+  flex: 0 0 35%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+}
+.input_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form_signup_wrapper input {
+  flex: 1;
+  height: 30px;
+  font-size: 18px;
+}
+.input_icon_wrap_signup {
+  border: 1px solid #ddd;
+  display: flex;
+  margin: 10px;
+  width: 250px;
+}
+.input_checkbox {
+  font-size: 14px;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input_icon_user {
+  background-image: url(./UserIcon.png);
+  background-size: cover;
+  padding: 16px;
+}
+.form_signup_wrapper button {
+  margin: 10px;
+  width: 250px;
+  height: 32px;
+  background-color: #ed171e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_signup_wrapper button:hover {
+  background-color: black;
+}
+.form_error_wrapper {
+  color: #ed171e;
+  font-weight: bolder;
+  font-size: 20px;
+}
+/* LOGIN */
+.form_login_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form_login_wrapper p {
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: center;
+}
+.form_login_wrapper input {
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+}
+.form_login_wrapper button {
+  width: 300px;
+  height: 32px;
+  background-color: #ed171e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form_login_wrapper button:hover {
+  background-color: black;
+}
+.form_signup_link {
+  font-size: 14px;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.form_signup_link:hover {
+  text-decoration-color: #ed171e;
+  color: #ed171e;
+}
+.input_icon_wrap {
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+}
+.input_with_icon {
+  border: none;
+  padding-left: 2px;
+}
+.input_icon_email {
+  background-image: url(./EmailIcon.ico);
+  background-size: cover;
+  padding: 16px;
+}
+.input_icon_eye {
+  background-image: url(./EyeIcon.png);
+  background-size: cover;
+  padding: 16px;
+}
+.input_icon_unhide {
+  background-image: url(./UnhideIcon.png);
+  background-size: cover;
+  padding: 16px;
+}
+
+/* OTHERS */
+.search_wrapper_empty,
+.error_wrapper,
+.signup_emailer_wrapper,
+.welcome_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  font-weight: bolder;
+  padding: 10px;
+  text-align: center;
+}
+.search_wrapper_empty h1,
+.error_wrapper h1,
+.signup_emailer_wrapper h1,
+.welcome_wrapper h1 {
+  font-family: "Chewy", cursive;
+}
+/* FOOTER */
+.footer_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.footer_content img {
+  height: 20px;
+  margin-left: 5px;
+}
+.footer_container {
+  margin-top: 20px;
+  flex: 0 0 5%;
+  border-top: solid 2px #ed171e;
+  width: 100%;
+}
+/* HOME */
+.main_container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.characters_wrapper {
+  flex: 0 0 95%;
+}
+/* HERO */
+.character_container {
+  display: flex;
+  background-color: blue;
+}
+/* .character_container img {
+  height: 400px;
+} */
+.hero_wrapper {
+  display: flex;
+  background-color: wheat;
+}
+
+/* FAVORIS */
+.favoris_items {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.favoris_items button {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.favoris_characters {
+  height: 200px;
+  display: flex;
+}
+.favoris_comics {
+  height: 300px;
+  display: flex;
+}
+.favoris_characters_wrapper {
+  background-color: black;
+  display: flex;
+  overflow-x: auto;
+  margin: 5px;
+}
+.favoris_comics_wrapper {
+  background-color: black;
+  display: flex;
+  overflow-x: auto;
+
+  margin: 5px;
+}
+
+.favoris_comics_wrapper::-webkit-scrollbar {
+  display: none;
+}
+.favoris_characters_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.favorite_item_comic {
+  margin: 5px;
+  height: 280px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+.favorite_item_character {
+  margin: 5px;
+  height: 180px;
+  width: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  text-align: center;
+}
+.favoris_title {
+  background-color: black;
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #ed171e;
+  font-size: 30px;
+  font-family: "Chewy", cursive;
+  margin: 5px;
+}
+.favorite_item_body {
+  color: white;
+  font-size: 22px;
+  font-family: "Chewy", cursive;
+  padding-top: 30px;
+}
+.modal_validated,
+.modal_refused {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  font-family: "Chewy", cursive;
+  font-weight: 30px;
 }
