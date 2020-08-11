@@ -92,7 +92,7 @@ img {
   border-bottom: solid 2px #ed171e;
 }
 .header_container img {
-  height: 50px;
+  height: 52px;
 }
 .header_nav {
   background-color: black;
@@ -194,9 +194,7 @@ img {
   border-bottom: 2px solid #ed171e;
 }
 .searchbar_with_icon {
-  height: 40px;
   width: 500px;
-
   border: none;
   font-size: 26px;
   font-family: "Chewy", cursive;

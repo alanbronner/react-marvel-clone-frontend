@@ -13,9 +13,9 @@ const Search = ({ API_CONFIG, setData }) => {
     } else {
       let url;
       if (location.pathname === "/comics") {
-        url = `http://gateway.marvel.com/v1/public/comics?limit=100&titleStartsWith=${searchTerm}&ts=${API_CONFIG.ts}&apikey=${API_CONFIG.MARVEL_API_PUBLIC_KEY}&hash=${API_CONFIG.hash}`;
+        url = `https://gateway.marvel.com/v1/public/comics?limit=100&titleStartsWith=${searchTerm}&ts=${API_CONFIG.ts}&apikey=${API_CONFIG.MARVEL_API_PUBLIC_KEY}&hash=${API_CONFIG.hash}`;
       } else {
-        url = `http://gateway.marvel.com/v1/public/characters?limit=100&nameStartsWith=${searchTerm}&ts=${API_CONFIG.ts}&apikey=${API_CONFIG.MARVEL_API_PUBLIC_KEY}&hash=${API_CONFIG.hash}`;
+        url = `https://gateway.marvel.com/v1/public/characters?limit=100&nameStartsWith=${searchTerm}&ts=${API_CONFIG.ts}&apikey=${API_CONFIG.MARVEL_API_PUBLIC_KEY}&hash=${API_CONFIG.hash}`;
       }
       try {
         const response = await Axios.get(url);
