@@ -22,7 +22,7 @@ const Character = ({ API_CONFIG }) => {
     const getData = async () => {
       try {
         const response = await Axios.get(
-          `https://gateway.marvel.com/v1/public/characters/${id}?apikey=${API_CONFIG.MARVEL_API_PUBLIC_KEY}`
+          `https://gateway.marvel.com/v1/public/characters/${id}?apikey=${API_CONFIG.MARVEL_API_PUBLIC_KEY}&hash=${API_CONFIG.hash}&ts=${API_CONFIG.ts}`
         );
         setData(response.data.data);
         setLoading("loaded");

@@ -40,7 +40,6 @@ const Search = ({ API_CONFIG, setData }) => {
           <input
             className="searchbar_with_icon"
             type="text"
-            // placeholder="Search any marvels ..."
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);

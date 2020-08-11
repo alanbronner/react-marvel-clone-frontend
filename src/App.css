@@ -185,30 +185,27 @@ img {
 }
 /* SEARCH */
 .searchbar_wrapper {
-  border-bottom: 2px solid #ed171e;
 }
 .input_icon_wrap_search {
   display: flex;
-  padding: 4px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 60px;
   background-color: white;
+  border-bottom: 2px solid #ed171e;
 }
 .searchbar_with_icon {
   height: 40px;
-  width: 600px;
-  padding-top: 6px;
+  width: 500px;
+
   border: none;
+  font-size: 26px;
+  font-family: "Chewy", cursive;
 }
 .input_icon_search {
   background-image: url(./SearchIcon.png);
   background-color: white;
   background-size: cover;
   padding: 20px;
-}
-
-.searchbar_with_icon {
-  border: none;
-  font-size: 26px;
-  font-family: "Chewy", cursive;
 }
 
 /* PAGINATION */

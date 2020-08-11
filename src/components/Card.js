@@ -45,14 +45,6 @@ const Card = ({
               </div>
               <div className="list_content">
                 <button className="btn">More</button>
-
-                {/* <div className="list_content">
-                {"object" === typeof description ? (
-                  <p>Description not available</p>
-                ) : (
-                  <p>{description}</p>
-                )}
-              </div> */}
               </div>
             </div>
           </div>
@@ -118,13 +110,6 @@ const Card = ({
               </div>
               <div className="list_content">
                 <button className="btn">More</button>
-                {/* <div className="list_content">
-                {!description.length ? (
-                  <p>Description not available</p>
-                ) : (
-                  <p>{description}</p>
-                )}
-              </div> */}
               </div>
             </div>
           </div>
